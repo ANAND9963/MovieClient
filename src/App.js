@@ -1,5 +1,5 @@
 import "./App.css";
-import api from "./api/axiosConfig";
+import {apiClient} from "./api/axiosConfig";
 
 import Layout from "./components/Layout";
 import { useState, useEffect } from "react";
@@ -8,6 +8,8 @@ import Home from "./components/home/Home";
 import Header from "./components/header/Header";
 import Trailer from "./components/trailer/Trailer";
 import Reviews from "./components/reviews/Reviews";
+import Auth from "./components/auth/Auth";
+
 
 function App() {
   const [movies, setMovies] = useState();
@@ -16,7 +18,7 @@ function App() {
 
   const getMovies = async () => {
     try {
-      const response = await api.get("/api/v1/movies");
+      const response = await apiClient.get("/api/v1/movies");
 
       console.log(response.data);
 
@@ -28,7 +30,7 @@ function App() {
 
   const getMovieData = async (movieId) => {
     try {
-      const response = await api.get(`/api/v1/movies/imdb/${movieId}`);
+      const response = await apiClient.get(`/api/v1/movies/imdb/${movieId}`);
       const singlemovie = response.data;
       setMovie(singlemovie);
 
@@ -47,9 +49,10 @@ function App() {
       <Header></Header>
 
       <Routes>
-        {/* <Route path="/" element={<Layout />} /> */}
+        
 
-        <Route path="/" element={<Home movies={movies} />} />
+        <Route path="/movies" element={<Home movies={movies} />} />
+        <Route path="/signin" element={<Auth />} />
         <Route path="/Trailer/:ytTrailerId" element={<Trailer />} />
         <Route
           path="/Reviews/:movieId"

@@ -1,6 +1,6 @@
 import { useEffect, useRef } from "react";
 
-import api from "../../api/axiosConfig";
+import {apiClient} from "../../api/axiosConfig";
 import { useParams } from "react-router-dom";
 import { Container, Row, Col } from "react-bootstrap";
 import ReviewForm from "../reviewForm/ReviewForm";
@@ -21,7 +21,7 @@ const Reviews = ({ getMovieData, movie, reviews, setReviews }) => {
     const rev = revText.current;
     try {
       if (rev.value !== "" && rev.value !== null) {
-        const response = await api.post("./api/v1/reviews", {
+        const response = await apiClient.post("./api/v1/reviews", {
           reviewBody: rev.value,
           imdbId: movieId,
         });

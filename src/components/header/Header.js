@@ -7,8 +7,18 @@ import  Nav  from "react-bootstrap/Nav";
 import { Navbar } from "react-bootstrap";
 import { NavLink } from "react-router-dom";
 import React from 'react'
+import { useNavigate } from "react-router-dom";
 
 const Header = () => {
+    const navigate = useNavigate();
+
+    const handleLoginClick = () => {
+        navigate('/signin');
+      };
+    
+      const handleRegisterClick = () => {
+        navigate('/signup');
+      };
   return (
     <Navbar bg="dark" variant="dark" expand="lg">
         <Container fluid>
@@ -23,12 +33,12 @@ const Header = () => {
                     style={{maxHeight : '100px'}}
                     navbarScroll
                     >
-                        <NavLink className="nav-link" to="/">Home</NavLink>
+                        <NavLink className="nav-link" to="/movies">Home</NavLink>
                         <NavLink className="nav-link" to="/watchList">Watch List</NavLink>
 
                 </Nav>
-                <Button variant="outline-info" className="me-2">Login</Button>
-                <Button variant="outline-info" >Register</Button>
+                <Button variant="outline-info" className="me-2" onClick={handleLoginClick}>Login</Button>
+                <Button variant="outline-info"  onClick={handleRegisterClick}>Register</Button>
             </Navbar.Collapse>
         </Container>
 
