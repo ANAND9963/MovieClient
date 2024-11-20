@@ -21,7 +21,8 @@ const Auth = () => {
     setPassword(e.target.value);
   };
 
-  const handleSubmit = async () => {
+  const handleSubmit = async (e) => {
+    e.preventDefault();
     try {
       const userData = await apiClient2.post("/api/signin", {
         userName,
@@ -41,6 +42,7 @@ const Auth = () => {
   };
 
   return (
+    <form>
     <div className="body">
       
         <input className="input"
@@ -58,6 +60,7 @@ const Auth = () => {
         <button  className="button" onClick={handleSubmit}> Submit</button>
       
     </div>
+    </form>
   );
 };
 

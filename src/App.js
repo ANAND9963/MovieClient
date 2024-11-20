@@ -51,6 +51,7 @@ function App() {
       <Routes>
         
 
+        <Route path="/" element={<Home movies={movies} />} />
         <Route path="/movies" element={<Home movies={movies} />} />
         <Route path="/signin" element={<Auth />} />
         <Route path="/Trailer/:ytTrailerId" element={<Trailer />} />
