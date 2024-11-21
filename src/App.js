@@ -4,7 +4,7 @@ import {apiClient} from "./api/axiosConfig.js";
 
 import Layout from "./components/Layout";
 import { useState, useEffect } from "react";
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, Navigate } from "react-router-dom";
 import Home from "./components/home/Home";
 import Header from "./components/header/Header";
 import Trailer from "./components/trailer/Trailer";
@@ -53,9 +53,9 @@ function App() {
       <Routes>
         
 
-        <Route path="/" element={<Auth />} />
+        <Route path="/" element={<Navigate to ="/signin" replace />} />
         <Route path="/signup" element={<Signup/>} />
-        <Route path="/movies" element={<Home movies={movies} />} />
+        <Route exact path="/movies" element={<Home movies={movies} />} />
         <Route path="/signin" element={<Auth />} />
         <Route path="/Trailer/:ytTrailerId" element={<Trailer />} />
         <Route
