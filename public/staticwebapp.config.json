@@ -1,9 +1,8 @@
 {
   "routes": [
     {
-      "route": "/{*any}",
-      "redirect": "/index.html",
-      "statusCode": 200
+      "route": "/*",
+      "rewrite": "/index.html"
     }
   ]
 }
