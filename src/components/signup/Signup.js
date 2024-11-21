@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import { LockOutlined, UserOutlined } from "@ant-design/icons";
 import { Button, Form, Input, message } from "antd";
 import "./Signup.css"
-import { apiClient2 } from "../../api/axiosConfig";
+import { apiClient2 } from "../../api/axiosConfig.js";
 import {  useNavigate } from "react-router-dom";
 
 

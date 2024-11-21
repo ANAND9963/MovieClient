@@ -7,7 +7,7 @@ import { LockOutlined, UserOutlined } from '@ant-design/icons';
 import {   Input, message } from 'antd';
 
 import { useState } from "react";
-import { apiClient2 } from "../../api/axiosConfig";
+import { apiClient2 } from "../../api/axiosConfig.js";
 import { useNavigate } from "react-router-dom";
 
 const Auth = () => {

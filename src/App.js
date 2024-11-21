@@ -1,6 +1,6 @@
 import "./App.css";
 
-import {apiClient} from "./api/axiosConfig";
+import {apiClient} from "./api/axiosConfig.js";
 
 import Layout from "./components/Layout";
 import { useState, useEffect } from "react";
