@@ -19,11 +19,7 @@ const Header = () => {
       const handleRegisterClick = () => {
         navigate('/signup');
       };
-
-      console.log(localStorage.getItem("token") ,"aaaaaaaaaaaaaaaaa");
       
-
-
       
   return (
     <Navbar bg="dark" variant="dark" expand="lg">

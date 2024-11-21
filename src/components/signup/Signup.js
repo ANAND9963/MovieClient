@@ -22,7 +22,7 @@ export const Signup = () => {
         const apiURl ='/api/signup';
         const payload= {...values};
         const response = await apiClient2.post(apiURl,payload);
-        console.log(response, "responseeeee");
+       
         message.success("Registered Successfully");
         navigate("/signin");
 
