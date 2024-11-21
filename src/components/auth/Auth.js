@@ -38,8 +38,8 @@ const Auth = () => {
         message.success("Login Successful");
         localStorage.setItem("token", userData.token);
   
-        // Navigate to movies page after login success
-        navigate(`/movies`);
+        
+        navigate("/movies");
       } else {
         message.error("Invalid response from server");
       }
