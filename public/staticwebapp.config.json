@@ -1,0 +1,9 @@
+{
+  "routes": [
+    {
+      "route": "/{*any}",
+      "redirect": "/index.html",
+      "statusCode": 200
+    }
+  ]
+}
