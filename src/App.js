@@ -22,7 +22,6 @@ function App() {
   const getMovies = async () => {
     try {
       const response = await apiClient.get("/api/v1/movies");
-
       console.log(response.data);
 
       setMovies(response.data);
