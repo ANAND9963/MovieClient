@@ -15,7 +15,7 @@ export const apiClient = axios.create({
     baseURL: `${SPRING_CONNECTION_BACKEND}`,  // Dynamic base URL from environment variable
 
     headers: {
-        "ngrok-skip-browser-warning": "true"  // Custom header to skip ngrok warning
+      
         
     }
 });
@@ -23,7 +23,7 @@ export const apiClient2 = axios.create({
     baseURL: `${NODE_EXPRESS_BACKEND}`,  // Dynamic base URL from environment variable
 
     headers: {
-        "ngrok-skip-browser-warning": "true"  // Custom header to skip ngrok warning
+      
     }
 });
 
