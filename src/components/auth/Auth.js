@@ -28,28 +28,30 @@ const Auth = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const userData = await apiClient2.post("/api/signin", {
+      const response = await apiClient2.post("/api/signin", {
         userName,
         password,
       });
-      message.success("Login Successfull");
-      localStorage.setItem("token", userData.data.token);
-
-      if (userData.data.token) {
+  
+      if (response && response.data && response.data.token) {
+        const userData = response.data;
+        message.success("Login Successful");
+        localStorage.setItem("token", userData.token);
+  
+        // Navigate to movies page after login success
         navigate(`/movies`);
+      } else {
+        message.error("Invalid response from server");
       }
-
+  
       setPassword("");
       setUserName("");
     } catch (error) {
-      
-      message.error(error.response.data.message);
-      console.log(error);
-      
-      
+      // Log the error message and handle it
+      message.error(error.response ? error.response.data.message : "Login failed");
+      console.error(error);
     }
   };
-
   return (
     <form>
     <div className="body">
