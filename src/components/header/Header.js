@@ -19,6 +19,12 @@ const Header = () => {
       const handleRegisterClick = () => {
         navigate('/signup');
       };
+
+      console.log(localStorage.getItem("token") ,"aaaaaaaaaaaaaaaaa");
+      
+
+
+      
   return (
     <Navbar bg="dark" variant="dark" expand="lg">
         <Container fluid>
@@ -33,7 +39,7 @@ const Header = () => {
                     style={{maxHeight : '100px'}}
                     navbarScroll
                     >
-                        <NavLink className="nav-link" to="/movies">Home</NavLink>
+                        <NavLink className="nav-link" to={localStorage.getItem("token") ? "/movies" : "/signin"}>Home</NavLink>
                         <NavLink className="nav-link" to="/watchList">Watch List</NavLink>
 
                 </Nav>

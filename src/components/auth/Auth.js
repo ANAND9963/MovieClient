@@ -2,6 +2,10 @@ import React from "react";
 import axios from "axios";
 import "./Auth.css"
 
+import { LockOutlined, UserOutlined } from '@ant-design/icons';
+
+import {   Input, message } from 'antd';
+
 import { useState } from "react";
 import { apiClient2 } from "../../api/axiosConfig";
 import { useNavigate } from "react-router-dom";
@@ -28,6 +32,7 @@ const Auth = () => {
         userName,
         password,
       });
+      message.success("Login Successfull");
       localStorage.setItem("token", userData.data.token);
 
       if (userData.data.token) {
@@ -37,7 +42,11 @@ const Auth = () => {
       setPassword("");
       setUserName("");
     } catch (error) {
+      
+      message.error(error.response.data.message);
       console.log(error);
+      
+      
     }
   };
 
@@ -45,16 +54,20 @@ const Auth = () => {
     <form>
     <div className="body">
       
-        <input className="input"
+        <Input className="input"
           placeholder="username"
+          prefix={<UserOutlined />}
           value={userName}
           onChange={handleUserNameInput}
+          required
         />
-        <input className="input"
+        <Input className="input"
           type="password"
           placeholder="password"
+          prefix={<LockOutlined />}
           value={password}
           onChange={handlePasswordInput}
+          required
         />
      
         <button  className="button" onClick={handleSubmit}> Submit</button>

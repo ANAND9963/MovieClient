@@ -1,4 +1,5 @@
 import "./App.css";
+
 import {apiClient} from "./api/axiosConfig";
 
 import Layout from "./components/Layout";
@@ -9,6 +10,8 @@ import Header from "./components/header/Header";
 import Trailer from "./components/trailer/Trailer";
 import Reviews from "./components/reviews/Reviews";
 import Auth from "./components/auth/Auth";
+import { Signup } from "./components/signup/Signup";
+
 
 
 function App() {
@@ -51,7 +54,8 @@ function App() {
       <Routes>
         
 
-        <Route path="/" element={<Home movies={movies} />} />
+        <Route path="/" element={<Auth />} />
+        <Route path="/signup" element={<Signup/>} />
         <Route path="/movies" element={<Home movies={movies} />} />
         <Route path="/signin" element={<Auth />} />
         <Route path="/Trailer/:ytTrailerId" element={<Trailer />} />

@@ -8,18 +8,27 @@
 
 .button {
     margin-top: 2rem;
-    width: 200px;  /* Set button width */
+    width: 200px;  /* Fixed button width */
     height: 50px;  /* Adjust height for better proportion */
     background-color: rgb(64, 37, 101);
     color: white;
     border: none;
     border-radius: 0.5rem;
     cursor: pointer;
-    transition: background-color 0.3s ease;
+    transition: background-color 0.3s ease, transform 0.3s ease;  /* Smooth transition */
+    font-size: 1rem;  /* Default button font size */
 }
 
+/* Button Hover State */
 .button:hover {
-    background-color: rgb(48, 190, 150);
+    background-color: rgb(48, 190, 150);  /* Change color on hover */
+    transform: translateY(-2px);  /* Subtle lift effect on hover */
+}
+
+/* Button Active State */
+.button:active {
+    background-color: rgb(32, 128, 95);  /* Darker color when button is pressed */
+    transform: translateY(0);  /* Remove lift effect on click */
 }
 
 .body {
