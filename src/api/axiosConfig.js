@@ -16,7 +16,7 @@ export const apiClient = axios.create({
 
     headers: {
         "ngrok-skip-browser-warning": "true"  // Custom header to skip ngrok warning
-        // 'Content-Type': 'application/json',
+        
     }
 });
 export const apiClient2 = axios.create({
